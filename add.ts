@@ -12,10 +12,10 @@ const oldPlugins = (await import('./plugins.json') as any).default;
 
 const BASE_URL = `${url}/dist`;
 
-let manifest: any = await fetch(`${BASE_URL}/hykord_plugin_manifest.json`);
+let manifest: any = await fetch(`${BASE_URL}/hykord_manifest.json`);
 console.log('Fetching manifest...');
 if (!manifest || !manifest.ok) {
-    console.log('Missing hykord_plugin_manifest.json');
+    console.log('Missing hykord_manifest.json');
     process.exit(1);
 }
 manifest = await manifest.json();
